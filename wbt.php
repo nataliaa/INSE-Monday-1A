@@ -30,7 +30,6 @@
 				function getAllTasks() {
 					$table = mysql_query("SELECT * FROM wbt_task WHERE task_parent = '0'");
 					$row = mysql_fetch_assoc($table);
-					//echo ucfirst($row["task_name"])."\n";
 					$task = new Task($row["task_id"], $row["task_name"], $row["task_parent"]);
 					echo "<ul id = 'wbt_tasks'>";
 					echo "<li>&nbsp;&nbsp;".ucfirst($task->getName())."\n</li>";
